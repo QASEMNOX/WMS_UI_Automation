@@ -1,0 +1,27 @@
+{
+    "url": "https://localhost:471/",
+    "LoginCredential": {
+        "LoginId": "Semnox",
+        "LoginPassword": "semnoX!1"
+    },
+    "SiteSelection": {
+        "SiteName": "SITEC"
+    },
+    "MenuItem": {
+        "Products": [
+            "Products",
+            "Discount",
+            "Tax"
+        ],
+        "Games": [
+            "Hubs",
+            "Game Profile",
+            "Games",
+            "Game Machine Level",
+            "Machines"
+        ]
+    },
+    "ProductsList": {
+        "ProductsListName": "Panels"
+    }
+}

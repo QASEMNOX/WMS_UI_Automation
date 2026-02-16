@@ -1,0 +1,83 @@
+{
+    "CustomAttributes": [
+        
+        {
+            "CustomAttributeId": -1,
+            "Name": "CUSTATTRIB5",
+            "Sequence": -1,
+            "Type": "LIST",
+            "Applicability": "PRODUCT",
+            "Access": "CUSTOM",
+            "IsActive": true,
+            "IsChanged": true,
+            "CustomAttributeValueListDTOList": [
+                {
+                    "CustomAttributeId": -1,
+                    "IsActive": true,
+                    "IsChanged": true,
+                    "IsDefault": "N",
+                    "Value": "CUSTATTRIBVALUE1",
+                    "ValueId": -1
+                },
+                {
+                    "CustomAttributeId": -1,
+                    "IsActive": true,
+                    "IsChanged": true,
+                    "IsDefault": "N",
+                    "Value": "CUSTATTRIBVALUE2",
+                    "ValueId": -1
+                }
+            ]
+        },
+        {
+            "CustomAttributeId": -1,
+            "Name": "CUSTATTRIB1",
+            "Sequence": -1,
+            "Type": "TEXT",
+            "Applicability": "PRODUCT",
+            "Access": "CUSTOM",
+            "IsActive": true,
+            "IsChanged": true,
+            "CustomAttributeValueListDTOList": [
+                {
+                    "CustomAttributeId": -1,
+                    "IsActive": true,
+                    "IsChanged": true,
+                    "IsDefault": "N",
+                    "Value": "CUSTATTRIBVALUE3",
+                    "ValueId": -1
+                },
+                {
+                    "CustomAttributeId": -1,
+                    "IsActive": true,
+                    "IsChanged": true,
+                    "IsDefault": "N",
+                    "Value": "CUSTATTRIBVALUE4",
+                    "ValueId": -1
+                }
+            ]
+        },
+        {
+            "CustomAttributeId": -1,
+            "Name": "CUSTATTRIB2",
+            "Sequence": -1,
+            "Type": "NUMBER",
+            "Applicability": "PRODUCT",
+            "Access": "CUSTOM",
+            "IsActive": true,
+            "IsChanged": true,
+            "CustomAttributeValueListDTOList": []
+        },
+        {
+            "CustomAttributeId": -1,
+            "Name": "CUSTATTRIB3",
+            "Sequence": -1,
+            "Type": "DATE",
+            "Applicability": "PRODUCT",
+            "Access": "CUSTOM",
+            "IsActive": true,
+            "IsChanged": true,
+            "CustomAttributeValueListDTOList": []
+        }
+    ]
+}

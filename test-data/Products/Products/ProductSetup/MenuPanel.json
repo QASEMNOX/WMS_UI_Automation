@@ -1,0 +1,43 @@
+{
+    "MenuPanels": [
+        {
+            "CellMarginTop": 2,
+            "RowCount": 15,
+            "PanelId": -1,
+            "ColumnCount": 15,
+            "DisplayOrder": 0,
+            "CellMarginBottom": 2,
+            "Name": "QAEGPANEL1",
+            "CellMarginLeft": 2,
+            "CellMarginRight": 2,
+            "IsActive": true,
+            "IsChanged": true
+        },
+        {
+            "CellMarginTop": 2,
+            "RowCount": 10,
+            "PanelId": -1,
+            "ColumnCount": 10,
+            "DisplayOrder": 0,
+            "CellMarginBottom": 2,
+            "Name": "QAPANEL2",
+            "CellMarginLeft": 2,
+            "CellMarginRight": 2,
+            "IsActive": true,
+            "IsChanged": true
+        },
+        {
+            "CellMarginTop": 2,
+            "RowCount": 10,
+            "PanelId": -1,
+            "ColumnCount": 10,
+            "DisplayOrder": 0,
+            "CellMarginBottom": 2,
+            "Name": "QAPANEL3",
+            "CellMarginLeft": 2,
+            "CellMarginRight": 2,
+            "IsActive": true,
+            "IsChanged": true
+        }
+    ]
+}

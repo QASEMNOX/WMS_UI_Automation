@@ -1,0 +1,18 @@
+{
+    "OrderTypeGroup": [
+        {
+            "Id": -1,
+            "Name": "OTG1",
+            "Description": "OTG1",
+            "Precedence": "0",
+            "IsActive": true
+        },
+        {
+            "Id": -1,
+            "Name": "OTG2",
+            "Description": "OTG2",
+            "Precedence": "1",
+            "IsActive": true
+        }
+    ]
+}

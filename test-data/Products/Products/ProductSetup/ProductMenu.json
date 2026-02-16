@@ -1,0 +1,25 @@
+{
+    "ProductMenus": [
+        {
+            "MenuId": -1,
+            "Name": "QAMENU2",
+            "Description": "QAMENU2",
+            "Type": "Redemption ",
+            "IsActive": true
+        },
+        {
+            "MenuId": -1,
+            "Name": "QAMENU3",
+            "Description": "QAMENU3",
+            "Type": "Reservation",
+            "IsActive": true
+        },
+        {
+            "MenuId": -1,
+            "Name": "QAMENU1",
+            "Description": "QAMENU1",
+            "Type": "Order Sale",
+            "IsActive": true
+        }
+    ]
+}

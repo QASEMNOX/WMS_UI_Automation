@@ -1,0 +1,18 @@
+{
+    "github.copilot.chat.githubMcpServer.enabled": true,
+    "github.copilot.chat.githubMcpServer.lockdown": true,
+    "github.copilot.chat.githubMcpServer.readonly": true,
+    "chat.mcp.assisted.nuget.enabled": true,
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": true,
+        "windsurf": true,
+        "cursor-global": true,
+        "cursor-workspace": true
+    },
+    "chat.mcp.gallery.enabled": true,
+    "github.copilot.chat.newWorkspace.useContext7": true,
+    "editor.suggest.preview": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "dotnetAcquisitionExtension.enablePreviewFeatures": true
+}

@@ -1,0 +1,16 @@
+{
+    "MenuMapping_MenuPanel": [
+        {
+            "MenuName": "REGPMENU1",
+            "PanelName": "REGPANEL1"
+        },
+        {
+            "MenuName": "REGPMENU2",
+            "PanelName": "REGPANEL2"
+        },
+        {
+            "MenuName": "REGPMENU3",
+            "PanelName": "REGPANEL3"
+        }
+    ]
+}
