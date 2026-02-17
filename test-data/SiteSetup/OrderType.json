@@ -1,0 +1,16 @@
+{
+    "OrderType": [
+        {
+            "Id": -1,
+            "Name": "QAOrderType1",
+            "Description": "QAOrderType1",
+            "IsActive": true
+        },
+        {
+            "Id": -1,
+            "Name": "QAOrderType2",
+            "Description": "QAOrderType2",
+            "IsActive": true
+        }
+    ]
+}

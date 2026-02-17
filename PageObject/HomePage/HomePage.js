@@ -24,6 +24,7 @@ class HomePage {
         this.siteSetup_Menu = this.leftNav.locator('div', { hasText: 'Site Setup' }).first();
         this.CustomAttributeSubMenu = this.leftNav.getByRole('link', { name: 'Custom Attributes' });
         this.OrderTypeGroupSubMenu = this.leftNav.getByRole('link', { name: 'Order Type Group' });
+        this.OrderTypeSubMenu=this.leftNav.getByRole('link', { name: 'Order Type', exact: true });
 
     }
     async SelectSiteDropdown(siteName) {
@@ -48,6 +49,13 @@ class HomePage {
         await this.siteSetup_Menu.click();
         await this.OrderTypeGroupSubMenu.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { });
         await this.OrderTypeGroupSubMenu.click();
+    }
+
+    async Sitesetup_OrderType_MenuSelection() {
+        await this.siteSetup_Menu.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { });
+        await this.siteSetup_Menu.click();
+        await this.OrderTypeSubMenu.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { });
+        await this.OrderTypeSubMenu.click();
     }
     /* Using JSON data
     async MenueSelection(menuName) {
