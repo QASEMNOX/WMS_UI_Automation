@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-class SiteSetup_CustomAttribute {
+class CustomAttribute {
     constructor(page) {
         this.page = page;
 
@@ -137,4 +137,4 @@ class SiteSetup_CustomAttribute {
         await this.CloseButton.click();
     }
 }
-module.exports = { SiteSetup_CustomAttribute };
+module.exports = { CustomAttribute };

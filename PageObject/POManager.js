@@ -2,10 +2,10 @@ const { LoginPage } = require('./Login/LoginPage');
 const { HomePage } = require('./HomePage/HomePage');
 const { Products_Products_Page } = require('./Products/Products/Products_Products_Page');
 const { ProductCategory } = require('./Products/Products/ProductSetup/ProductCategory');
-const { SiteSetup_CustomAttribute } = require('./SiteSetup/SiteSetup_CustomAttribute'); 
+const { CustomAttribute } = require('./SiteSetup/CustomAttribute'); 
 const { MenuPanel } = require('./Products/Products/ProductSetup/MenuPanel');
 const { ProductMenu } = require('./Products/Products/ProductSetup/ProductMenu');
-const { SiteSetup_OrderTypeGroup } = require('./SiteSetup/SiteSetup_OrderTypeGroup');
+const { OrderTypeGroup } = require('./SiteSetup/OrderTypeGroup');
 
 
 class POManager {
@@ -15,10 +15,10 @@ class POManager {
         this.homePage = new HomePage(this.page);
         this.products_Products_Page=new Products_Products_Page(this.page);
         this.products_Products_ProductCategory=new ProductCategory(this.page);
-        this.siteSetup_CustomAttribute = new SiteSetup_CustomAttribute(this.page);
+        this.siteSetup_CustomAttribute = new CustomAttribute(this.page);
         this.products_Products_MenuPanel = new MenuPanel(this.page);
         this.products_Products_ProductMenu = new ProductMenu(this.page);
-        this.siteSetup_OrderTypeGroup = new SiteSetup_OrderTypeGroup(this.page);
+        this.siteSetup_OrderTypeGroup = new OrderTypeGroup(this.page);
     }
     getLoginPage() {
         return this.loginPage;

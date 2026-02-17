@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-class SiteSetup_OrderTypeGroup {
+class OrderTypeGroup {
     constructor(page) {
         this.page = page;
 
@@ -49,4 +49,4 @@ class SiteSetup_OrderTypeGroup {
         await this.CloseButton.click();
     }
 }
-module.exports = { SiteSetup_OrderTypeGroup };
+module.exports = { OrderTypeGroup };
