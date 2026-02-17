@@ -18,15 +18,15 @@ class OrderTypeGroup {
         this.recordSavedMessage = this.page.getByText('Record has been saved');
     }
 
-    async clickAddNewOrderTypeGroup() {
+    async AddNew_OrderTypeGroup() {
         await this.AddNewOrderTypeGroup.click();
     }
-    async AddNewOrderTypeGroup_values(name, description, precedence) {
+    async EnterDetaile_OrderTypeGroup(name, description, precedence) {
         await this.Name.fill(name);
         await this.Description.fill(description);
         await this.Precedence.fill(precedence);
     }
-    async clickSaveButton() {
+    async Save_OrderTypeGroup() {
         // expect(this.saveButton).toBeEnabled();
         await this.saveButton.click();
         await expect(this.SuccessfulySavedMessage).toBeVisible();
@@ -45,7 +45,7 @@ class OrderTypeGroup {
         }
         await this.recordSavedMessage.waitFor({ state: 'hidden', timeout: 10000 }).catch(() => {});
     }
-    async closeOrderTypeGroupDialog() {
+    async Close_OrderTypeGroup() {
         await this.CloseButton.click();
     }
 }

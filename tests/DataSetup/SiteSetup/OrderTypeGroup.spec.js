@@ -37,13 +37,13 @@ test.describe('Order Type Group Setup Flow', () => {
     });
     test('Add Order Type Group Values', async () => {
 
-        await OrderTypeGroup.clickAddNewOrderTypeGroup();
+        await OrderTypeGroup.AddNew_OrderTypeGroup();
         for (const orderTypeGroup of orderTypeGroupData.OrderTypeGroup) {
-            await OrderTypeGroup.AddNewOrderTypeGroup_values(orderTypeGroup.Name, orderTypeGroup.Description, orderTypeGroup.Precedence);
-            await OrderTypeGroup.clickSaveButton();
+            await OrderTypeGroup.EnterDetaile_OrderTypeGroup(orderTypeGroup.Name, orderTypeGroup.Description, orderTypeGroup.Precedence);
+            await OrderTypeGroup.Save_OrderTypeGroup();
             
         }
-        await OrderTypeGroup.closeOrderTypeGroupDialog();
+        await OrderTypeGroup.Close_OrderTypeGroup();
     });
 
     // 🧹 CLEANUP
