@@ -6,22 +6,5 @@
     },
     "SiteSelection": {
         "SiteName": "SITEC"
-    },
-    "MenuItem": {
-        "Products": [
-            "Products",
-            "Discount",
-            "Tax"
-        ],
-        "Games": [
-            "Hubs",
-            "Game Profile",
-            "Games",
-            "Game Machine Level",
-            "Machines"
-        ]
-    },
-    "ProductsList": {
-        "ProductsListName": "Panels"
     }
 }
