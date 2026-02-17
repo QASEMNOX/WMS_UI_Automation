@@ -1,21 +1,24 @@
 const { test, expect } = require('@playwright/test');
 const { POManager } = require('../../../../../PageObject/POManager');
 const testData = require('../../../../../test-data/WMS_Input.json');
-const ProductMenuData = require('../../../../../test-data/Products/Products/ProductSetup/ProductMenu.json');
+const MenuPanelData = require('../../../../../test-data/Products/Products/ProductSetup/MenuPanel.json');
 
 let context;
 let page;
 let poManager;
-let Products_Products_ProductMenu;
+let MenuPanel;
 
-test.describe('Products Products Menu  Flow', () => {
+test.describe('Products Products Menu Panel Flow', () => {
     test.describe.configure({ mode: 'serial' });
     // 🔐 LOGIN + NAVIGATION → RUNS ONCE
     test.beforeAll(async ({ browser }) => {
         context = await browser.newContext();
         page = await context.newPage();
+
         poManager = new POManager(page);
+
         const loginPage = poManager.getLoginPage();
+        await loginPage.waitForPageToBeReady();
         await loginPage.goTo(testData.url);
         await loginPage.waitForPageToBeReady();
         await loginPage.validLogin(
@@ -26,23 +29,30 @@ test.describe('Products Products Menu  Flow', () => {
         await loginPage.waitForPageToBeReady();
         const homePage = poManager.getHomePage();
         await homePage.SelectSiteDropdown(testData.SiteSelection.SiteName);
-        await loginPage.waitForPageToBeReady();
         await homePage.MenueSelection();
         await loginPage.waitForPageToBeReady();
         const products_Products_Page=poManager.getProducts_Products_Page();
-        await products_Products_Page.clickProductMenu();
-        Products_Products_ProductMenu = poManager.getProducts_Products_ProductMenu();
+        await products_Products_Page.clickPanels();
+        await loginPage.waitForPageToBeReady();
+        MenuPanel = poManager.getProducts_Products_MenuPanel();
     });
-    // 🧱 STEP 1: CREATE Product Menu
-    test('Create a Product Menu', async () => {
-        await Products_Products_ProductMenu.clickAddNewProductMenu();
-        for (const productMenu of ProductMenuData.ProductMenus) {
-            await Products_Products_ProductMenu.enterProductMenuDetails(
-                productMenu.Name,
-                productMenu.Type,
-                productMenu.Description
+    // 🧱 STEP 1: CREATE Menu panel
+    test('Create Menu panel', async () => {
+
+        await MenuPanel.clickAddNewMenuPanel();
+        for (const menuPanel of MenuPanelData.MenuPanels) {
+            await MenuPanel.enterMenuDetails(
+                menuPanel.Name,
+                menuPanel.RowCount,
+                menuPanel.ColumnCount,
+                menuPanel.DisplayOrder,
+                menuPanel.CellMarginTop,
+                menuPanel.CellMarginBottom,
+                menuPanel.CellMarginLeft,
+                menuPanel.CellMarginRight
             );
-            await Products_Products_ProductMenu.clickSaveButton();
+            await MenuPanel.clickSaveButton();
         }
+        await MenuPanel.closeMenuPanelDialog();
     });
 });

@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-class Products_Products_MenuPanel {
+class MenuPanel {
     constructor(page) {
         this.page = page;
 
@@ -122,4 +122,4 @@ class Products_Products_MenuPanel {
         await this.page.waitForTimeout(2000);
     }
 }
-module.exports = { Products_Products_MenuPanel };
+module.exports = { MenuPanel };

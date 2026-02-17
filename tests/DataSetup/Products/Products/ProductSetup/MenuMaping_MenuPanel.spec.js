@@ -8,7 +8,7 @@ let context;
 let page;
 let poManager;
 let loginPage;
-let products_Products_MenuPanel;
+let MenuPanel;
 
 test.describe('Products Products Menu Panel Flow', () => {
     test.describe.configure({ mode: 'serial' });
@@ -37,26 +37,25 @@ test.describe('Products Products Menu Panel Flow', () => {
         const products_Products_Page=poManager.getProducts_Products_Page();
         await products_Products_Page.clickPanels();
         await loginPage.waitForPageToBeReady();
-        products_Products_MenuPanel =
-            poManager.getProducts_Products_MenuPanel();
+        MenuPanel =poManager.getProducts_Products_MenuPanel();
     });
     // 🧱 STEP 1: CREATE Menu panel
     test('Add  panel to existing menu', async () => {
 
         for(const menuMapping_MenuPanel of MenuMapping_MenuPanelData.MenuMapping_MenuPanel){
-            await products_Products_MenuPanel.searchAndSelectPanel(menuMapping_MenuPanel.PanelName);
-            await products_Products_MenuPanel.searchAndSelectPanel(menuMapping_MenuPanel.PanelName);
-            await products_Products_MenuPanel.ClickOnActionsButtonForMenuPanel();
+            await MenuPanel.searchAndSelectPanel(menuMapping_MenuPanel.PanelName);
+            await MenuPanel.searchAndSelectPanel(menuMapping_MenuPanel.PanelName);
+            await MenuPanel.ClickOnActionsButtonForMenuPanel();
             await loginPage.waitForPageToBeReady();
-            await products_Products_MenuPanel.ClickOnMenuMappingButton();
+            await MenuPanel.ClickOnMenuMappingButton();
             await loginPage.waitForPageToBeReady();
-            await products_Products_MenuPanel.ClickOnAddNewMenuMapping();
+            await MenuPanel.ClickOnAddNewMenuMapping();
             await loginPage.waitForPageToBeReady();
-            await products_Products_MenuPanel.SearchAndSelectMenuInDropdown(menuMapping_MenuPanel.MenuName);
-            await products_Products_MenuPanel.clickMenuMappingSaveButton();
+            await MenuPanel.SearchAndSelectMenuInDropdown(menuMapping_MenuPanel.MenuName);
+            await MenuPanel.clickMenuMappingSaveButton();
             await loginPage.waitForPageToBeReady();
-            await products_Products_MenuPanel.clickMenuMappingCloseButton();
-            await products_Products_MenuPanel.closeMenuPanelDialog();
+            await MenuPanel.clickMenuMappingCloseButton();
+            await MenuPanel.closeMenuPanelDialog();
             await loginPage.waitForPageToBeReady();
         }
     });

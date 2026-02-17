@@ -8,8 +8,7 @@ const orderTypeGroupData = require('../../../test-data/SiteSetup/OrderTypeGroup.
 let context;
 let page;
 let poManager;
-let siteSetup_CustomAttribute;
-let siteSetup_OrderTypeGroup;
+let OrderTypeGroup;
 
 test.describe('Order Type Group Setup Flow', () => {
 
@@ -34,17 +33,17 @@ test.describe('Order Type Group Setup Flow', () => {
         await homePage.SelectSiteDropdown(testData.SiteSelection.SiteName);
         await homePage.Sitesetup_OrderTypeGroup_MenueSelection();
 
-        siteSetup_OrderTypeGroup = poManager.getSiteSetup_OrderTypeGroup();
+        OrderTypeGroup = poManager.getSiteSetup_OrderTypeGroup();
     });
     test('Add Order Type Group Values', async () => {
 
-        await siteSetup_OrderTypeGroup.clickAddNewOrderTypeGroup();
+        await OrderTypeGroup.clickAddNewOrderTypeGroup();
         for (const orderTypeGroup of orderTypeGroupData.OrderTypeGroup) {
-            await siteSetup_OrderTypeGroup.AddNewOrderTypeGroup_values(orderTypeGroup.Name, orderTypeGroup.Description, orderTypeGroup.Precedence);
-            await siteSetup_OrderTypeGroup.clickSaveButton();
+            await OrderTypeGroup.AddNewOrderTypeGroup_values(orderTypeGroup.Name, orderTypeGroup.Description, orderTypeGroup.Precedence);
+            await OrderTypeGroup.clickSaveButton();
             
         }
-        await siteSetup_OrderTypeGroup.closeOrderTypeGroupDialog();
+        await OrderTypeGroup.closeOrderTypeGroupDialog();
     });
 
     // 🧹 CLEANUP

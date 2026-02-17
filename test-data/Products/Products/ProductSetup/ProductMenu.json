@@ -2,22 +2,22 @@
     "ProductMenus": [
         {
             "MenuId": -1,
-            "Name": "QAMENU2",
-            "Description": "QAMENU2",
+            "Name": "QAMENU20",
+            "Description": "QAMENU20",
             "Type": "Redemption ",
             "IsActive": true
         },
         {
             "MenuId": -1,
-            "Name": "QAMENU3",
-            "Description": "QAMENU3",
+            "Name": "QAMENU30",
+            "Description": "QAMENU30",
             "Type": "Reservation",
             "IsActive": true
         },
         {
             "MenuId": -1,
-            "Name": "QAMENU1",
-            "Description": "QAMENU1",
+            "Name": "QAMENU10",
+            "Description": "QAMENU10",
             "Type": "Order Sale",
             "IsActive": true
         }

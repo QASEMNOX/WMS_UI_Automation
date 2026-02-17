@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-class Products_Products_ProductMenu {
+class ProductMenu {
     constructor(page) {
         this.page = page;
         this.AddNewProductMenu = page.locator(".btnAdd");
@@ -49,4 +49,4 @@ class Products_Products_ProductMenu {
         await expect(this.dialog).not.toBeVisible();
     }
 }
-module.exports = { Products_Products_ProductMenu };
+module.exports = { ProductMenu };

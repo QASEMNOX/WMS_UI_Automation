@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-class Products_Products_ProductCategory {
+class ProductCategory {
     constructor(page) {
         this.page = page;
 
@@ -49,4 +49,4 @@ class Products_Products_ProductCategory {
     }
 
 }
-module.exports = { Products_Products_ProductCategory };
+module.exports = { ProductCategory };

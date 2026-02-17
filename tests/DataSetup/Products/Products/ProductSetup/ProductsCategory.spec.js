@@ -17,8 +17,8 @@ test('Products Products Category',async({page})=>{
     const products_Products_Page=poManager.getProducts_Products_Page();
     await products_Products_Page.clickProductCategory();
     
-    const products_Products_ProductCategory=poManager.getProducts_Products_ProductCategory();
-    await products_Products_ProductCategory.clickAddNewProductCategory();
-    await products_Products_ProductCategory.enterCategoryDetails("2222");
-    await products_Products_ProductCategory.clickSaveButton();
+    const ProductCategory=poManager.getProducts_Products_ProductCategory();
+    await ProductCategory.clickAddNewProductCategory();
+    await ProductCategory.enterCategoryDetails("2222");
+    await ProductCategory.clickSaveButton();
 })

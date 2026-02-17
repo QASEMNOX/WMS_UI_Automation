@@ -7,7 +7,7 @@ const customAttributeData =
 let context;
 let page;
 let poManager;
-let siteSetup_CustomAttribute;
+let CustomAttribute;
 
 test.describe('Custom Attribute Setup Flow', () => {
 
@@ -32,7 +32,7 @@ test.describe('Custom Attribute Setup Flow', () => {
         await homePage.SelectSiteDropdown(testData.SiteSelection.SiteName);
         await homePage.Sitesetup_CustomAttribute_MenueSelection();
 
-        siteSetup_CustomAttribute =
+        CustomAttribute =
             poManager.getSiteSetup_CustomAttribute();
     });
     /*
@@ -41,11 +41,11 @@ test.describe('Custom Attribute Setup Flow', () => {
     
             for (const attribute of customAttributeData.CustomAttributes) {
     
-                await siteSetup_CustomAttribute.clickAddNewCustomerAttribute();
-                await siteSetup_CustomAttribute.enterAttributeName(attribute.Name);
-                await siteSetup_CustomAttribute.selectType(attribute.Type);
-                await siteSetup_CustomAttribute.selectApplicability(attribute.Applicability);
-                await siteSetup_CustomAttribute.clickSaveButton();
+                await CustomAttribute.clickAddNewCustomerAttribute();
+                await CustomAttribute.enterAttributeName(attribute.Name);
+                await CustomAttribute.selectType(attribute.Type);
+                await CustomAttribute.selectApplicability(attribute.Applicability);
+                await CustomAttribute.clickSaveButton();
     
             }
         });*/
@@ -62,17 +62,17 @@ test.describe('Custom Attribute Setup Flow', () => {
                         continue;
                     }
                     console.log(`Adding values for Custom Attribute: ${attribute.Name}`);
-                    await siteSetup_CustomAttribute.searchCustomAttribute(attribute.Name);
+                    await CustomAttribute.searchCustomAttribute(attribute.Name);
                     
-                    await siteSetup_CustomAttribute.selectLastCustomAttributeCheckbox();
-                    //await siteSetup_CustomAttribute.selectCustomAttributeCheckbox(attribute.Name);
-                    await siteSetup_CustomAttribute.ClickonAddCustomAttributeValuesButton();
+                    await CustomAttribute.selectLastCustomAttributeCheckbox();
+                    //await CustomAttribute.selectCustomAttributeCheckbox(attribute.Name);
+                    await CustomAttribute.ClickonAddCustomAttributeValuesButton();
         
-                    await siteSetup_CustomAttribute.addListValues(
+                    await CustomAttribute.addListValues(
                         attribute.CustomAttributeValueListDTOList
                     );
         
-                    await siteSetup_CustomAttribute.closecustomAttributeDialog();
+                    await CustomAttribute.closecustomAttributeDialog();
                 }*/
 
         for (const attribute of customAttributeData.CustomAttributes) {
@@ -91,18 +91,18 @@ test.describe('Custom Attribute Setup Flow', () => {
                 console.log(`Adding value: ${value}`);
 
                 // Search attribute
-                await siteSetup_CustomAttribute.searchCustomAttribute(attribute.Name);
+                await CustomAttribute.searchCustomAttribute(attribute.Name);
 
-                await siteSetup_CustomAttribute.selectLastCustomAttributeCheckbox();
+                await CustomAttribute.selectLastCustomAttributeCheckbox();
 
                 // Click Add Value
-                await siteSetup_CustomAttribute.ClickonAddCustomAttributeValuesButton();
+                await CustomAttribute.ClickonAddCustomAttributeValuesButton();
 
                 // Fill value
-                await siteSetup_CustomAttribute.addCustomerAttributeListValues(value);
+                await CustomAttribute.addCustomerAttributeListValues(value);
 
                 // Save
-                await siteSetup_CustomAttribute.clickCustomAttributeValueSaveButton(value);
+                await CustomAttribute.clickCustomAttributeValueSaveButton(value);
 
                 console.log(`✅ Custom Attribute Value "${value}" added successfully`);
             }
