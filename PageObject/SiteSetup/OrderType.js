@@ -15,19 +15,19 @@ class OrderType {
         this.SuccessfulySavedMessage = this.page.locator('.mat-snack-bar-container');
 
         this.searchOrderType=this.page.locator('.card.mt-3.mb-3').getByRole('textbox', { name: 'Search' });
-        this.EditMenuPanel = this.page.getByRole('cell').filter({ hasText: /^$/ }).last();
+        this.EditorderType = this.page.getByRole('cell').filter({ hasText: /^$/ }).last();
 
     }
-    async ClickOnAddNewOrderType()
+    async AddNew_OrderType()
     {
         await this.AddNewOrderType.click();
     }
-    async EnterOrderTypeValues(name, description) {
+    async EnterDetails_OrderType(name, description) {
         await this.dialog.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
         await this.Name.fill(name);
         await this.description.fill(description);
     }
-    async clickSaveButton() {
+    async Save_OrderType() {
         await this.saveButton.click();
         await expect(this.SuccessfulySavedMessage).toBeVisible();
         const messageText = (await this.SuccessfulySavedMessage.innerText())?.trim();
@@ -45,7 +45,7 @@ class OrderType {
         }
         await this.recordSavedMessage.waitFor({ state: 'hidden', timeout: 10000 }).catch(() => {});
     }
-    async closeOrderTypeGroupDialog() {
+    async Close_OrderType() {
         await this.CloseButton.click();
     }
 

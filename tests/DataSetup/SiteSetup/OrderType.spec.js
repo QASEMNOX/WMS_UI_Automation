@@ -34,14 +34,15 @@ test.describe('Order Type Setup Flow', () => {
         OrderType = poManager.getSiteSetup_OrderType();
     });
     test('Add Order Type Group Values', async () => {
-        await OrderType.ClickOnAddNewOrderType();
+        await OrderType.AddNew_OrderType();
         for (const orderTypeItem of orderTypeData.OrderType) {
-            await OrderType.EnterOrderTypeValues(
+            await OrderType.EnterDetails_OrderType(
                 orderTypeItem.Name,
                 orderTypeItem.Description
             );
-            await OrderType.clickSaveButton();
+            await OrderType.Save_OrderType();
         }
+        await OrderType.Close_OrderType();
     });
 
     // 🧹 CLEANUP
