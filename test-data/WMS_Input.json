@@ -1,10 +1,10 @@
 {
-    "url": "https://localhost:471/",
+    "url": "https://orionwebms.parafait2.com/",
     "LoginCredential": {
         "LoginId": "Semnox",
         "LoginPassword": "semnoX!1"
     },
     "SiteSelection": {
-        "SiteName": "SITEC"
+        "SiteName": "SITEA"
     }
 }

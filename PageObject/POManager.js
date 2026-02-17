@@ -7,6 +7,15 @@ const { MenuPanel } = require('./Products/Products/ProductSetup/MenuPanel');
 const { ProductMenu } = require('./Products/Products/ProductSetup/ProductMenu');
 const { OrderTypeGroup } = require('./SiteSetup/OrderTypeGroup');
 
+//CHAITRA
+
+const { POSPage } = require('./Products/Products/ProductSetup/POSPage')
+const { OfferGroup } = require('./Products/Products/ProductSetup/OfferGroup');
+const {SegmentDefinition } = require('./Products/Products/ProductSetup/SegmentDefinition');
+const {SegmentDefinitionMapping } = require('./Products/Products/ProductSetup/SegmentDefinitionMapping');
+const {Tax } = require('./Products/Tax/Tax');
+const {TaxStructure } = require('./Products/Tax/TaxStructure');
+
 
 class POManager {
     constructor(page) {
@@ -19,6 +28,15 @@ class POManager {
         this.products_Products_MenuPanel = new MenuPanel(this.page);
         this.products_Products_ProductMenu = new ProductMenu(this.page);
         this.siteSetup_OrderTypeGroup = new OrderTypeGroup(this.page);
+
+        //CHAITRA
+
+        this.posPage = new POSPage(this.page);
+        this.offergroupPage = new OfferGroup(this.page);
+        this.segmnetdefinitionPage = new SegmentDefinition(this.page);
+        this.segmentDefinitionMappingPage = new SegmentDefinitionMapping(this.page);
+          this.taxPage = new Tax(this.page);
+          this.taxStructurePage = new TaxStructure(this.page);
     }
     getLoginPage() {
         return this.loginPage;
@@ -44,5 +62,46 @@ class POManager {
     getSiteSetup_OrderTypeGroup() {
         return this.siteSetup_OrderTypeGroup;
     }
+
+    //CHAITRA
+
+    getPOSPage() {
+        return this.posPage;
+    }
+
+    /**
+ * @returns {import('./Products/ProductSetup/OfferGroup').OfferGroup}
+ */
+    getOfferGroupPage(){
+        
+        return this.offergroupPage;
+    }
+
+    getSegmentDefinitionPage()
+    {
+        return this.segmnetdefinitionPage;
+    }
+
+     getSegmentDefinitionMappingPage()
+    {
+        return this.segmentDefinitionMappingPage;
+    }
+
+
+     /**
+ * @returns {import('./Products/Tax/Tax').Tax}
+ */
+     getTaxPage()
+    {
+        return this.taxPage;
+    }
+/**
+ * @returns {import('./Products/Tax/TaxStructure').TaxStructure}
+ */
+      getTaxStructurePage()
+    {
+        return this.taxStructurePage;
+    }
+
 }
 module.exports = { POManager };
