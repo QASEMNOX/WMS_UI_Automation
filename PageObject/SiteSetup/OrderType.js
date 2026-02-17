@@ -14,6 +14,9 @@ class OrderType {
         this.recordSavedMessage = this.page.getByText('Record has been saved');
         this.SuccessfulySavedMessage = this.page.locator('.mat-snack-bar-container');
 
+        this.searchOrderType=this.page.locator('.card.mt-3.mb-3').getByRole('textbox', { name: 'Search' });
+        this.EditMenuPanel = this.page.getByRole('cell').filter({ hasText: /^$/ }).last();
+
     }
     async ClickOnAddNewOrderType()
     {
@@ -21,11 +24,8 @@ class OrderType {
     }
     async EnterOrderTypeValues(name, description) {
         await this.dialog.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
-        console.log("1111111111");
         await this.Name.fill(name);
-         console.log("1111111111");
         await this.description.fill(description);
-         console.log("1111111111");
     }
     async clickSaveButton() {
         await this.saveButton.click();
