@@ -32,7 +32,7 @@ class HomePage {
         await this.dropdownButton.click();
         await this.siteOptions.filter({ hasText: siteName }).click();
     }
-    async MenueSelection() {
+    async Products_Products_MenueSelection() {
         await this.productsMenu.waitFor({ state: 'visible' });
         await this.productsMenu.click();
         await this.productsSubMenu.waitFor({ state: 'visible' });
