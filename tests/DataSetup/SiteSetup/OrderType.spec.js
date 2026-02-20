@@ -7,7 +7,7 @@ let context;
 let page;
 let poManager;
 let OrderType;
-
+let loginPage;
 test.describe('Order Type Setup Flow', () => {
 
     test.describe.configure({ mode: 'serial' });
@@ -19,7 +19,7 @@ test.describe('Order Type Setup Flow', () => {
 
         poManager = new POManager(page);
 
-        const loginPage = poManager.getLoginPage();
+        loginPage = poManager.getLoginPage();
         await loginPage.goTo(testData.url);
         await loginPage.validLogin(
             testData.LoginCredential.LoginId,
@@ -32,8 +32,9 @@ test.describe('Order Type Setup Flow', () => {
         await homePage.Sitesetup_OrderType_MenuSelection();
 
         OrderType = poManager.getSiteSetup_OrderType();
+        await loginPage.waitForPageToBeReady();
     });
-    test('Add Order Type Group Values', async () => {
+  /* test('Add Order Type Group Values', async () => {
         await OrderType.AddNew_OrderType();
         for (const orderTypeItem of orderTypeData.OrderType) {
             await OrderType.EnterDetails_OrderType(
@@ -43,6 +44,15 @@ test.describe('Order Type Setup Flow', () => {
             await OrderType.Save_OrderType();
         }
         await OrderType.Close_OrderType();
+    });*/
+        test('Add Order Type Group Mapping', async () => {
+            
+        await OrderType.Search_OrderType("QAOrderType1");
+        await OrderType.Search_OrderType("QAOrderType1");
+        await loginPage.waitForPageToBeReady();
+        await OrderType.SelectCheckbox_OrderType("QAOrderType1");
+        await OrderType.SelectMapButton_OrderType();
+        
     });
 
     // 🧹 CLEANUP

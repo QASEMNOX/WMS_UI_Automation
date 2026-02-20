@@ -6,6 +6,7 @@ const { CustomAttribute } = require('./SiteSetup/CustomAttribute');
 const { MenuPanel } = require('./Products/Products/ProductSetup/MenuPanel');
 const { ProductMenu } = require('./Products/Products/ProductSetup/ProductMenu');
 const { OrderTypeGroup } = require('./SiteSetup/OrderTypeGroup');
+const { OrderType } = require('./SiteSetup/OrderType');
 
 
 class POManager {
@@ -19,6 +20,7 @@ class POManager {
         this.products_Products_MenuPanel = new MenuPanel(this.page);
         this.products_Products_ProductMenu = new ProductMenu(this.page);
         this.siteSetup_OrderTypeGroup = new OrderTypeGroup(this.page);
+        this.siteSetup_OrderType=new OrderType(this.page);
     }
     getLoginPage() {
         return this.loginPage;
@@ -43,6 +45,9 @@ class POManager {
     }
     getSiteSetup_OrderTypeGroup() {
         return this.siteSetup_OrderTypeGroup;
+    }
+    getSiteSetup_OrderType() {
+        return this.siteSetup_OrderType;
     }
 
     getPOSPage() {

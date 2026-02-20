@@ -14,16 +14,17 @@ class OrderType {
         this.recordSavedMessage = this.page.getByText('Record has been saved');
         this.SuccessfulySavedMessage = this.page.locator('.mat-snack-bar-container');
 
-        this.searchOrderType=this.page.locator('.card.mt-3.mb-3').getByRole('textbox', { name: 'Search' });
-        this.EditorderType = this.page.getByRole('cell').filter({ hasText: /^$/ }).last();
+        this.searchOrderType = this.page.locator('.card.mt-3.mb-3').getByRole('textbox', { name: 'Search' });
+        this.firstRow = this.page.locator('table tbody tr').first();
+        this.checkbox_OrderType = this.firstRow.locator('input[type="checkbox"]');
+        this.OrderTypeGroupMapButton = this.page.locator('button:has-text("Map Order Type")');
 
     }
-    async AddNew_OrderType()
-    {
+    async AddNew_OrderType() {
         await this.AddNewOrderType.click();
     }
     async EnterDetails_OrderType(name, description) {
-        await this.dialog.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
+        await this.dialog.waitFor({ state: 'visible', timeout: 10000 }).catch(() => { });
         await this.Name.fill(name);
         await this.description.fill(description);
     }
@@ -43,11 +44,51 @@ class OrderType {
             console.log(`❓ Unknown response for Order Type Group "${this.Name}"`);
             console.log(`📩 Message: ${messageText}`);
         }
-        await this.recordSavedMessage.waitFor({ state: 'hidden', timeout: 10000 }).catch(() => {});
+        await this.recordSavedMessage.waitFor({ state: 'hidden', timeout: 10000 }).catch(() => { });
     }
     async Close_OrderType() {
         await this.CloseButton.click();
     }
+
+    async Search_OrderType(Name) {
+        await this.page.waitForLoadState('networkidle');
+        await this.searchOrderType.waitFor({ state: 'visible', timeout: 10000 }).catch(() => { });
+        await this.searchOrderType.fill(Name, { delay: 500 });
+    }
+
+    // 2️⃣ Wait for search result row to appear
+   /* async SelectCheckbox_OrderType() {
+
+        await this.firstRow.waitFor({ state: 'visible' });
+
+        // 3️⃣ Click checkbox of first row
+        await this.checkbox_OrderType.waitFor({ state: 'visible' });
+        await this.checkbox_OrderType.check();   // Better than click() for checkboxes
+
+        np
+    }*/async SelectCheckbox_OrderType(orderTypeName) {
+        if (!orderTypeName) {
+            throw new Error('orderTypeName is required');
+        }
+
+        const row = this.page
+            .getByRole('row')
+            .filter({ hasText: orderTypeName })
+            .first(); // handle duplicates safely
+
+        await expect(row).toBeVisible();
+
+        const checkbox = row.getByRole('checkbox');
+        await checkbox.check();
+
+        await expect(this.OrderTypeGroupMapButton).toBeEnabled();
+    }
+    // 4️⃣ Click Map Order Type button
+    async SelectMapButton_OrderType() {
+        await this.OrderTypeGroupMapButton.waitFor({ state: 'visible' });
+        await OrderTypeGroupMapButton.click();
+    }
+
 
 }
 module.exports = { OrderType };
