@@ -1,20 +1,16 @@
 [
     {
-"segmentName" : "S122A",
-"SequenceOrder" : 1,
-"isMandatory" : "N",
-"applicableEntity" : "POS PRODUCTS",
-"DataSourceType" : "TEXT"
-
-},
-
-{
-"segmentName" : "S112A",
-"SequenceOrder" : 1,
-"isMandatory" : true,
-"applicableEntity" : "POS PRODUCTS",
-"DataSourceType" : "STATIC LIST"
-
-}
-
+        "segmentName": "S122A",
+        "SequenceOrder": 1,
+        "isMandatory": "N",
+        "applicableEntity": "POS PRODUCTS",
+        "DataSourceType": "TEXT"
+    },
+    {
+        "segmentName": "S112A",
+        "SequenceOrder": 1,
+        "isMandatory": true,
+        "applicableEntity": "POS PRODUCTS",
+        "DataSourceType": "STATIC LIST"
+    }
 ]

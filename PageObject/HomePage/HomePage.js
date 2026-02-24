@@ -43,6 +43,7 @@ class HomePage {
         await this.siteSetup_Menu.click();
         await this.CustomAttributeSubMenu.click();
     }
+   
     //await this.MenuMappingButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { });
     async Sitesetup_OrderTypeGroup_MenueSelection() {
         await this.siteSetup_Menu.waitFor({ state: 'visible', timeout: 5000 }).catch(() => { });

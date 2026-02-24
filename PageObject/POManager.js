@@ -7,6 +7,7 @@ const { MenuPanel } = require('./Products/Products/ProductSetup/MenuPanel');
 const { ProductMenu } = require('./Products/Products/ProductSetup/ProductMenu');
 const { OrderTypeGroup } = require('./SiteSetup/OrderTypeGroup');
 const { OrderType } = require('./SiteSetup/OrderType');
+const {Cards} = require('./Products/Products/ProductType/Cards')
 
 
 class POManager {
@@ -21,6 +22,7 @@ class POManager {
         this.products_Products_ProductMenu = new ProductMenu(this.page);
         this.siteSetup_OrderTypeGroup = new OrderTypeGroup(this.page);
         this.siteSetup_OrderType=new OrderType(this.page);
+        this.Products_Products_Cards= new Cards(this.page);
     }
     getLoginPage() {
         return this.loginPage;
@@ -48,6 +50,10 @@ class POManager {
     }
     getSiteSetup_OrderType() {
         return this.siteSetup_OrderType;
+    }
+    getProducts_Products_cards()
+    {
+        return this.Products_Products_Cards;
     }
 
     getPOSPage() {

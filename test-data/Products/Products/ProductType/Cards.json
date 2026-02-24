@@ -1,0 +1,23 @@
+{
+    "Cards": [
+        {
+            "Cards_ProductPage": {
+                "DisplayOrder": "1",
+                "OrderType": "qaordertype2",
+                "CategoryType": "cat1",
+                "POSCounterType": "default",
+                "CheckBox": {
+                    "Quantity Prompt": 1,
+                    "Allow Price Override": 0,
+                    "Auto Generate Card Number": 1,
+                    "Only For VIP": 0,
+                    "Display In POS?": 1,
+                    "Modifier": 0,
+                    "Is Recommended": 1,
+                    "Issue Notification Device": 0,
+                    "Is Transfer Card": 1
+                }
+            }
+        }
+    ]
+}

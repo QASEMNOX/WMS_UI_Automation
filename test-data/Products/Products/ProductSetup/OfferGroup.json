@@ -1,19 +1,10 @@
 [
     {
-"OfferGroupName" : "OFFERQA1",
-"isUpsell" : true
-
-
-},
-
-{
-"OfferGroupName" : "OFFERQA2",
-"isUpsell" : false
-
-
-
-}
-
-
-
+        "OfferGroupName": "OFFERQA1",
+        "isUpsell": true
+    },
+    {
+        "OfferGroupName": "OFFERQA2",
+        "isUpsell": false
+    }
 ]

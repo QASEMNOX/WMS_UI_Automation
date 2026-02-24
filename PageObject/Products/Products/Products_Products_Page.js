@@ -6,7 +6,7 @@ class Products_Products_Page {
 
         this.AddNewProductCategory = page.locator(".btnAdd");
 
-        this.cards = page.getByRole('button', { name: 'Cards' });
+        this.cards = page.getByRole('link', { name: 'Cards' });
         this.nonCardSales = page.getByRole('button', { name: 'Non - Card Sales(F & B Etc)' });
         this.combo = page.getByRole('button', { name: 'Combo' });
         this.bookings = page.getByRole('button', { name: 'Bookings' });
