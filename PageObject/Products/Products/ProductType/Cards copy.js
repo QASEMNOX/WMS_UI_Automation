@@ -46,68 +46,45 @@ class Cards {
         this.PanelType = this.page.getByLabel('Panel *');
         this.PanelTypeDropdown = this.page.locator('span');
         this.PanelSaveBtn = this.page.locator("//button[@type='submit']");
-        this.panelsClosebtn = this.page.getByText('X', { exact: true });
+        this.panelsClosebtn =this.page.getByText('X', { exact: true });
 
         this.SelctProducts = this.page.locator(`//tr[td[normalize-space()='cardsale']]//button`);
         this.selectProductsButton = this.page.locator('table tbody tr').filter({ hasText: 'cardsale' }).first().getByRole('button');
 
         //-------------------Card Product Price------------------------------
-        this.PriceTab = this.page.getByText('Price', { exact: true });
-        this.FaceValue = this.page.getByText('Face Value', { exact: true });
-        this.Price = this.page.getByPlaceholder('Price', { exact: true })
-        this.TaxType = this.page.getByLabel('Tax', { exact: true });
-        this.TaxTypeDropdown = this.page.locator('span');
+        this.PriceTab= this.page.getByText('Price', { exact: true });
+        this.FaceValue=this.page.getByText('Face Value', { exact: true });
+        this.Price=this.page.getByPlaceholder('Price',{exact:true})
+        this.TaxType=this.page.getByLabel('Tax', { exact: true });
+        this.TaxTypeDropdown=this.page.locator('span');
         //this.Tax=this.page.getByPlaceholder('Tax %',{exact:true})
-        this.ServiceChargePercentage = this.page.getByRole('textbox', { name: 'Service charge percentage' });
-        this.GratuityChargePercentage = this.page.getByRole('textbox', { name: 'Gratuity percentage' });
+        this.ServiceChargePercentage=this.page.getByRole('textbox', { name: 'Service charge percentage' });
+        this.GratuityChargePercentage=this.page.getByRole('textbox', { name: 'Gratuity percentage' });
 
-        this.TaxInclusiveCheckbox = this.page.locator('label').filter({ hasText: 'Tax Inclusive?' });
-        this.ServiceChargeisApplicableCheckbox = this.page.locator('label').filter({ hasText: 'Service charge is applicable' });
-        this.GratuityisApplicableCheckbox = this.page.locator('label').filter({ hasText: 'Gratuity is applicable' })
+        this.TaxInclusiveCheckbox=this.page.locator('label').filter({ hasText: 'Tax Inclusive?' });
+        this.ServiceChargeisApplicableCheckbox=this.page.locator('label').filter({ hasText: 'Service charge is applicable' });
+        this.GratuityisApplicableCheckbox=this.page.locator('label').filter({ hasText: 'Gratuity is applicable' })
 
         //------------Entitelment Tab-------------------
-        this.EntitlementsTab = this.page.getByText('Entitlements', { exact: true });
+        this.EntitlementsTab=this.page.getByText('Entitlements', { exact: true });
 
-        this.CardValidFor = this.page.getByRole('textbox', { name: 'Card Valid For (in Days)' });
-        this.Courtesy = this.page.getByRole('textbox', { name: 'Courtesy' });
-        this.AddnewExtendedcredit = this.page.locator('app-product-credit-plus').getByRole('button', { name: '+' });
+        this.CardValidFor=this.page.getByRole('textbox', { name: 'Card Valid For (in Days)' });
+        this.Courtesy=this.page.getByRole('textbox', { name: 'Courtesy' });
+        this.AddnewExtendedcredite= this.page.locator('app-product-credit-plus').getByRole('button', { name: '+' });
 
-        this.CreditPlusAmount = this.page.getByPlaceholder('Credit Plus Amount', {exact: true })
-        this.CardValidFor = this.page.getByPlaceholder('Valid For Days', {exact: true })
-        this.Minutes = this.page.getByPlaceholder('Minutes', {exact: true })
-        this.Remarks = this.page.getByPlaceholder('Remarks', {exact: true })
-        this.EffectiveAfterMinutes=this.page.getByPlaceholder('Effective After Minutes', {exact: true });
+        this.CreditPlusAmount= this.page.getByRole('textbox', { name: 'Credit Plus Amount' });
+        this.CardValidFor= this.page.getByRole('textbox', { name: 'Valid For Days' });
+        this.Minutes= this.page.getByRole('textbox', { name: 'Minutes', exact: true });
+
         this.ExtendedCrediplusType = this.page.getByLabel('Credit Plus Type *');
         this.ExtendedCrediplusTypeDropdown = this.page.locator('span');
-
-        this.dialog = this.page.getByRole('dialog');
-        this.CreditPlusType = this.page.getByLabel('Tax', { exact: true });
-        this.CreditPlusTypeDropdown = this.page.locator('span');
-
-    }
-    async EntitlementsTab_CardProduct() {
-        await this.EntitlementsTab.click();
-    }
-    async AddNewCardCreditPlusEntitelments()
-    {
-        await this.AddnewExtendedcredit.click();
-    }
-    async EnterDetails_CardCreditPlusEntitlements()
-    {
-        await this.CreditPlusAmount.fill("100", { delay: 500 });
-        await this.CardValidFor.fill("5",{delay:500});
-
-        await this.ExtendedCrediplusType.click();
-        await this.ExtendedCrediplusTypeDropdown.filter({ hasText: 'Card Balance' }).last().click();
         
     }
-    // Function to fill any field based on placeholder name
-    async fillFieldByPlaceholder(placeholderName, value) {
-        if (value !== undefined && value !== null) {
-            await this.page.getByPlaceholder(placeholderName, { exact: true }).fill(value.toString());
-        }
+    async EntitlementsTab_CardProduct()
+    {
+        await this.EntitlementsTab.click();
     }
-
+    
     //-------------Add Card Product--------------------
     async AddNew_CardProduct() {
         await expect(this.AddNewCardProduct).toBeEnabled();
@@ -184,7 +161,8 @@ class Cards {
         await this.PanelType.click();
         await this.PanelTypeDropdown.filter({ hasText: 'a44' }).last().click();
     }
-    async SaveMenuPanels_Product() {
+    async SaveMenuPanels_Product()
+    {
         await expect(this.PanelSaveBtn).toBeEnabled();
         await this.PanelSaveBtn.click();
         await expect(this.recordSavedMessage).toBeVisible();
@@ -203,20 +181,23 @@ class Cards {
         }
         await this.recordSavedMessage.waitFor({ state: 'hidden', timeout: 10000 }).catch(() => { });
     }
-    async CloseMenuPanel_Product() {
+    async CloseMenuPanel_Product()
+    {
         await this.panelsClosebtn.click();
     }
     //----------Enter Details in Price Tab------------------------------------------
-    async Pricetab_CardProduct() {
+    async Pricetab_CardProduct()
+    {
         await this.PriceTab.click();
     }
-    async EnterPriceDetails_Pricetab(FaceValue, Price, Tax, ServiceCharge, GratuityCharge) {
+    async EnterPriceDetails_Pricetab(FaceValue,Price,Tax,ServiceCharge,GratuityCharge)
+    {
         await this.FaceValue.fill(FaceValue, { delay: 500 });
-        await this.Price.fill(Price, { delay: 500 });
+        await this.Price.fill(Price,{delay:500});
         await this.TaxType.click();
         await this.TaxTypeDropdown.filter({ hasText: Tax }).last().click();
-        await this.ServiceChargePercentage.fill(ServiceCharge, { delay: 500 });
-        await this.GratuityChargePercentage.fill(GratuityCharge, { delay: 500 });
+        await this.ServiceChargePercentage.fill(ServiceCharge,{delay:500});
+        await this.GratuityChargePercentage.fill(GratuityCharge,{delay:500});
     }
 
 }
