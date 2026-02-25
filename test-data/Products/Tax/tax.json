@@ -1,6 +1,6 @@
 [
     {
-"tax_Name" : "T0225c",
+"tax_Name" : "T02026c",
 "taxPercentage" : "10",
 "TaxStructureName" : "T1AGST",
 "TaxStructurepercentage" : 5
@@ -8,7 +8,7 @@
 },
 
  {
-"tax_Name" : "T0225d",
+"tax_Name" : "T02026d",
 "taxPercentage" : "10",
 "TaxStructureName" : "T1BGST",
 "TaxStructurepercentage" : 5

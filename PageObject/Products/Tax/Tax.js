@@ -56,11 +56,12 @@ class Tax {
     }
 
 
-    async closeTax() {
+    async closeTax_and_gotoHome() {
         await this.closeButton.waitFor({ state: 'visible' });
         await this.closeButton.click();
         //await this.idle;
         await this.page.waitForLoadState('networkidle');
+          await this.homeMenu.click();
     }
 
     //  EDIT TAX METHOD

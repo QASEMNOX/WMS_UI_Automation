@@ -53,7 +53,7 @@ await Tax.CreateTax(data.tax_Name, data.taxPercentage);
 ).toContainText('Record has been saved successfully');
 */
 
-await Tax.closeTax();
+await Tax.closeTax_and_gotoHome();
 
   });
 }
