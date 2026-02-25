@@ -57,29 +57,25 @@ class Cards {
         this.Price=this.page.getByPlaceholder('Price',{exact:true})
         this.TaxType=this.page.getByLabel('Tax', { exact: true });
         this.TaxTypeDropdown=this.page.locator('span');
-        this.Tax=this.page.getByPlaceholder('Tax %',{exact:true})
+        //this.Tax=this.page.getByPlaceholder('Tax %',{exact:true})
         this.ServiceChargePercentage=this.page.getByRole('textbox', { name: 'Service charge percentage' });
         this.GratuityChargePercentage=this.page.getByRole('textbox', { name: 'Gratuity percentage' });
 
         this.TaxInclusiveCheckbox=this.page.locator('label').filter({ hasText: 'Tax Inclusive?' });
         this.ServiceChargeisApplicableCheckbox=this.page.locator('label').filter({ hasText: 'Service charge is applicable' });
         this.GratuityisApplicableCheckbox=this.page.locator('label').filter({ hasText: 'Gratuity is applicable' })
-    }
-    async Pricetab_CardProduct()
-    {
-        await this.PriceTab.click();
-    }
-    async EnterPriceDetails_Pricetab()
-    {
-        await this.FaceValue.fill("20", { delay: 500 });
-        await this.Price.fill("100",{delay:500});
-        await this.TaxType.click();
-        await this.TaxTypeDropdown.filter({ hasText: 'T1' }).last().click();
-        await this.Tax.fill("10",{delay:500});
-        await this.ServiceChargePercentage.fill("0",{delay:500});
-        await this.GratuityChargePercentage.fill("0",{delay:500});
 
+        //------------Entitelment Tab-------------------
+        this.EntitlementsTab=this.page.getByText('Entitlements', { exact: true });
+
+        this.CardValidFor=this.page.getByRole('textbox', { name: 'Card Valid For (in Days)' });
+        this.Courtesy=this.page.getByRole('textbox', { name: 'Courtesy' });
     }
+    async EntitlementsTab_CardProduct()
+    {
+        await this.EntitlementsTab.click();
+    }
+    
     //-------------Add Card Product--------------------
     async AddNew_CardProduct() {
         await expect(this.AddNewCardProduct).toBeEnabled();
@@ -136,13 +132,10 @@ class Cards {
         await this.PosCounterTypeDropdown.filter({ hasText: 'default' }).last().click();
     }
 
-    async setCheckboxByLabel_Product(labelName, value) {
+    async setCheckboxByLabel(labelName, value) {
         const checkbox = this.page.locator('label').filter({ hasText: labelName });
-
         await expect(checkbox).toBeVisible();
-
         const isChecked = await checkbox.isChecked();
-
         if (value === 1 && !isChecked) {
             await checkbox.click();
         }
@@ -182,6 +175,20 @@ class Cards {
     async CloseMenuPanel_Product()
     {
         await this.panelsClosebtn.click();
+    }
+    //----------Enter Details in Price Tab------------------------------------------
+    async Pricetab_CardProduct()
+    {
+        await this.PriceTab.click();
+    }
+    async EnterPriceDetails_Pricetab(FaceValue,Price,Tax,ServiceCharge,GratuityCharge)
+    {
+        await this.FaceValue.fill(FaceValue, { delay: 500 });
+        await this.Price.fill(Price,{delay:500});
+        await this.TaxType.click();
+        await this.TaxTypeDropdown.filter({ hasText: Tax }).last().click();
+        await this.ServiceChargePercentage.fill(ServiceCharge,{delay:500});
+        await this.GratuityChargePercentage.fill(GratuityCharge,{delay:500});
     }
 
 }

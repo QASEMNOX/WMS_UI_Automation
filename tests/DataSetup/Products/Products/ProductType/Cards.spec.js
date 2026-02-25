@@ -46,25 +46,29 @@ test.describe('Products Products Menu Panel Flow', () => {
          await Cards.Save_CardProducts();*/
         await loginPage.waitForPageToBeReady();
         await Cards.SelectProducts();
-        await loginPage.waitForPageToBeReady();
-      /*  await Cards.EnterDetails_CardProducts_Product();
+        await loginPage.waitForPageToBeReady(CardsData.Cards);
+        //await Cards.EnterDetails_CardProducts_Product();
         for (const card of CardsData.Cards) {
             const checkboxData = card.Cards_ProductPage.CheckBox;
-
+            const PriceTabData = card.Card_Price;
+/*
             for (const [label, value] of Object.entries(checkboxData)) {
-                await Cards.setCheckboxByLabel_Product(label, value);
+                await Cards.setCheckboxByLabel(label, value);
+            }*/
+
+            /* await Cards.AddNewMenuPanels_Product();
+             await Cards.EnterMenuPanelDetail_Product();
+             await Cards.SaveMenuPanels_Product();
+             await Cards.CloseMenuPanel_Product();*/
+
+            await Cards.Pricetab_CardProduct();
+            await loginPage.waitForPageToBeReady();
+
+            await Cards.EnterPriceDetails_Pricetab(PriceTabData.Face_Value, PriceTabData.Price, PriceTabData.Tax, PriceTabData.Service_charge_percentage, PriceTabData.Gratuity_Percentage);
+            for (const [label, value] of Object.entries(PriceTabData.PriceTabCheckbox)) {
+                await Cards.setCheckboxByLabel(label, value);
             }
-        }*/
-       /* await Cards.AddNewMenuPanels_Product();
-        await Cards.EnterMenuPanelDetail_Product();
-        await Cards.SaveMenuPanels_Product();
-        await Cards.CloseMenuPanel_Product();*/
-
-        await Cards.Pricetab_CardProduct();
-        await loginPage.waitForPageToBeReady();
-    
-        await Cards.EnterPriceDetails_Pricetab();
-
-
+            await page.pause();
+        }
     });
 });
