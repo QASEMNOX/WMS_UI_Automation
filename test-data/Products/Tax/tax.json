@@ -1,15 +1,15 @@
 [
     {
-"tax_Name" : "T1A",
-"taxPercentage" : 10,
+"tax_Name" : "T0225c",
+"taxPercentage" : "10",
 "TaxStructureName" : "T1AGST",
 "TaxStructurepercentage" : 5
 
 },
 
  {
-"tax_Name" : "T1B",
-"taxPercentage" : 10,
+"tax_Name" : "T0225d",
+"taxPercentage" : "10",
 "TaxStructureName" : "T1BGST",
 "TaxStructurepercentage" : 5
 

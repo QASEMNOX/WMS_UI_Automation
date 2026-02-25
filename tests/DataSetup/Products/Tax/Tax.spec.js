@@ -44,7 +44,7 @@ for (const data of TaxData) {
     
 const Tax = poManager.getTaxPage();
 await Tax.selectTaxMenu();
-await Tax.CreateTax(data.tax_Name, data.TaxPercentage);
+await Tax.CreateTax(data.tax_Name, data.taxPercentage);
 
 //await page.getByText('IsUpsell').click();
 

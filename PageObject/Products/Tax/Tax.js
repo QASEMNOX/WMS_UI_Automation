@@ -1,4 +1,6 @@
 
+const { expect } = require('@playwright/test');
+
 class Tax {
 
     constructor(page)  //if page is missing then there is no life for page defined in consructor
@@ -22,7 +24,8 @@ class Tax {
         this.closeButton = page.locator('.close-button-popup');
         this.homeMenu = page.locator("div.nav_name_icon:has-text('Home')");
 
-        this.idle = page.waitForLoadState('networkidle');
+      //  this.idle = page.waitForLoadState('networkidle');
+     //     await this.page.waitForLoadState('networkidle');
         this.successMessage = page.locator('.mat-simple-snack-bar-content');
 
         // Table
@@ -35,7 +38,8 @@ class Tax {
     async selectTaxMenu() {
         await this.ProductsMenu.click();
         await this.tax.click();
-        await this.idle();
+        //await this.idle();
+        await this.page.waitForLoadState('networkidle');
 
     }
 
@@ -55,7 +59,8 @@ class Tax {
     async closeTax() {
         await this.closeButton.waitFor({ state: 'visible' });
         await this.closeButton.click();
-        await this.idle;
+        //await this.idle;
+        await this.page.waitForLoadState('networkidle');
     }
 
     //  EDIT TAX METHOD

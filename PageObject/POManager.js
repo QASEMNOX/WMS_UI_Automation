@@ -9,6 +9,12 @@ const { OrderTypeGroup } = require('./SiteSetup/OrderTypeGroup');
 const { OrderType } = require('./SiteSetup/OrderType');
 const {Cards} = require('./Products/Products/ProductType/Cards')
 
+const { OfferGroup } = require('./Products/Products/ProductSetup/OfferGroup');
+const {SegmentDefinition } = require('./Products/Products/ProductSetup/SegmentDefinition');
+const {SegmentDefinitionMapping } = require('./Products/Products/ProductSetup/SegmentDefinitionMapping');
+const {Tax } = require('./Products/Tax/Tax');
+const {TaxStructure } = require('./Products/Tax/TaxStructure');
+
 
 class POManager {
     constructor(page) {
@@ -23,6 +29,11 @@ class POManager {
         this.siteSetup_OrderTypeGroup = new OrderTypeGroup(this.page);
         this.siteSetup_OrderType=new OrderType(this.page);
         this.Products_Products_Cards= new Cards(this.page);
+         this.offergroupPage = new OfferGroup(this.page);
+        this.segmnetdefinitionPage = new SegmentDefinition(this.page);
+        this.segmentDefinitionMappingPage = new SegmentDefinitionMapping(this.page);
+          this.taxPage = new Tax(this.page);
+          this.taxStructurePage = new TaxStructure(this.page);
     }
     getLoginPage() {
         return this.loginPage;
