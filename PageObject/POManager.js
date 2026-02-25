@@ -14,6 +14,7 @@ const {SegmentDefinition } = require('./Products/Products/ProductSetup/SegmentDe
 const {SegmentDefinitionMapping } = require('./Products/Products/ProductSetup/SegmentDefinitionMapping');
 const {Tax } = require('./Products/Tax/Tax');
 const {TaxStructure } = require('./Products/Tax/TaxStructure');
+const {POSPage} = require('./SiteSetup/POSPage');
 
 
 class POManager {
@@ -34,6 +35,7 @@ class POManager {
         this.segmentDefinitionMappingPage = new SegmentDefinitionMapping(this.page);
           this.taxPage = new Tax(this.page);
           this.taxStructurePage = new TaxStructure(this.page);
+          this.posPage = new POSPage(this.page);
     }
     getLoginPage() {
         return this.loginPage;

@@ -1,3 +1,5 @@
+const { expect } = require('@playwright/test');
+
 class POSPage {
 
     constructor(page)  //if page is missing then there is no life for page defined in consructor
@@ -16,6 +18,10 @@ class POSPage {
         this.computerName = page.locator("[placeholder='Computer Name']");
         this.saveButton = page.getByRole('button', { name: 'Save' });
         this.backbrowserButton = page.locator('.back-arrow');
+        this.successMessage = page.locator('.mat-simple-snack-bar-content');
+         this.homeMenu = page.locator("div.nav_name_icon:has-text('Home')");
+
+       
 
 
     }
@@ -39,11 +45,30 @@ class POSPage {
         await this.selectCounter.click();
         await this.posName.fill(posName);
         await this.computerName.fill(computerName);
+
+       this.page.once('dialog', async dialog => {
+        console.log('Alert Message:', dialog.message());
+        await dialog.accept();  // Clicks OK
+    });
+
+
         await this.saveButton.click();
-        await this.backbrowserButton.click();
+
+           await expect(this.successMessage).toBeVisible();
+                await expect(this.successMessage).toContainText('Record has been saved successfully');
+                console.log('Record has been saved successfully');
+
+                
+
+       // await this.backbrowserButton.click();
 
     
     }
+
+     async GoHome() {
+  
+    await this.homeMenu.click();
+  }
 }
 
 module.exports = { POSPage };

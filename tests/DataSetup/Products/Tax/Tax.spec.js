@@ -6,7 +6,7 @@ const { POManager } = require('../../../../PageObject/POManager');
 const testData = require('../../../../test-data/WMS_Input.json');
 const TaxData = require('../../../../test-data/Products/Tax/tax.json');
 
-test.describe(' Offer Group - Create Multiple Tax', () => {
+test.describe(' Create Multiple Tax', () => {
 
     let poManager;
     let page;

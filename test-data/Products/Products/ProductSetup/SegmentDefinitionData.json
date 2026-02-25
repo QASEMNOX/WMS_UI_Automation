@@ -1,13 +1,13 @@
 [
     {
-        "segmentName": "S122A",
+        "segmentName": "S121A",
         "SequenceOrder": 1,
         "isMandatory": "N",
         "applicableEntity": "POS PRODUCTS",
         "DataSourceType": "TEXT"
     },
     {
-        "segmentName": "S112A",
+        "segmentName": "S111A",
         "SequenceOrder": 1,
         "isMandatory": true,
         "applicableEntity": "POS PRODUCTS",
