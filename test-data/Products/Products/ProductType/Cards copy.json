@@ -19,20 +19,15 @@
                 }
             },
             "Card_Price": {
-                "PriceField": {
-                    "Face_Value": "10",
-                    "Price": "10",
-                    "Service_charge_percentage": "",
-                    "Gratuity_Percentage": ""
-                },
-                "PriceDropdown": {
-                    "Tax": "T1"
-                },
-                
-                "PriceTabCheckbox": {
-                    "Tax Inclusive?": 1,
-                    "Service charge is applicable": 0,
-                    "Gratuity is applicable": 0
+                "Face_Value":"10",
+                "Price":"10",
+                "Tax":"T1",
+                "Service_charge_percentage":"",
+                "Gratuity_Percentage":"",
+                "PriceTabCheckbox":{
+                    "Tax Inclusive?":1,
+                    "Service charge is applicable":0,
+                    "Gratuity is applicable":0
                 }
             }
         }

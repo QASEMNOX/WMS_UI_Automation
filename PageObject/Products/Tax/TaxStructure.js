@@ -1,4 +1,6 @@
 
+const { expect } = require('@playwright/test');
+
 class TaxStructure {
 
     constructor(page)  //if page is missing then there is no life for page defined in consructor

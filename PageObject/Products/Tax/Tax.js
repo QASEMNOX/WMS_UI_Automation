@@ -56,20 +56,25 @@ class Tax {
     }
 
 
-    async closeTax_and_gotoHome() {
+    async closeTax() {
         await this.closeButton.waitFor({ state: 'visible' });
         await this.closeButton.click();
         //await this.idle;
         await this.page.waitForLoadState('networkidle');
+          
+    }
+
+    async gotoHome() {
+       
           await this.homeMenu.click();
     }
 
     //  EDIT TAX METHOD
-    async editTax(taxNameToEdit) {
+    async editTax(EditTax) {
 
         await this.tableHeader.waitFor({ state: 'visible' });
         await expect(
-            page.getByRole('checkbox').first()
+            this.page.getByRole('checkbox').first()
         ).toBeVisible();
 
         await this.tablebodyrows.first().waitFor();
@@ -95,10 +100,10 @@ class Tax {
             const taxName = (await taxCell.first().innerText()).trim();
             console.log(`Row ${i} Tax Name:`, taxName);
 //Compare With Required Tax Name AND CLICK Edit
-            if (taxName === taxNameToEdit) {
+            if (taxName === EditTax) {
 
                 await row.locator('button.fa-pencil').click();
-                console.log(`Clicked edit for ${taxNameToEdit}`);
+                console.log(`Clicked edit for ${EditTax}`);
                 break;
             }
         }

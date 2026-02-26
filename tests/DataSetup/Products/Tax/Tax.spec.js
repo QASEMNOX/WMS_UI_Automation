@@ -46,14 +46,20 @@ test.describe(' Create Multiple Tax', () => {
       await Tax.selectTaxMenu();
       await Tax.CreateTax(data.tax_Name, data.taxPercentage);
 
-      //await page.getByText('IsUpsell').click();
+      await Tax.closeTax();
 
-      /*await expect(
-        page.locator('snack-bar-container')
-      ).toContainText('Record has been saved successfully');
-      */
+      // Create Tax structure
 
-      await Tax.closeTax_and_gotoHome();
+      await Tax.editTax(data.EditTax);
+      const TaxStructure = poManager.getTaxStructurePage();
+      await TaxStructure.addTaxStructure(data.TaxStructureName, data.TaxStructurepercentage);
+      await TaxStructure.CloseTaxStructurePopup();
+      await TaxStructure.CloseTaxSet();
+
+      await Tax.gotoHome();
+
+
+
 
     });
   }

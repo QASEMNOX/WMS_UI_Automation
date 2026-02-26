@@ -1,17 +1,19 @@
 [
     {
-"tax_Name" : "T02026c",
+"tax_Name" : "2025o",
 "taxPercentage" : "10",
-"TaxStructureName" : "T1AGST",
-"TaxStructurepercentage" : 5
+"EditTax" : "2025o",
+"TaxStructureName" : "T1a",
+"TaxStructurepercentage" : "5"
 
 },
 
  {
-"tax_Name" : "T02026d",
+"tax_Name" : "2025p",
 "taxPercentage" : "10",
-"TaxStructureName" : "T1BGST",
-"TaxStructurepercentage" : 5
+"EditTax" : "2025p",
+"TaxStructureName" : "T2a",
+"TaxStructurepercentage" : "5"
 
 }
 
